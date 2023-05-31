@@ -40,6 +40,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void run() {
                 robot.beWithMe();
+                //관리자 호출
             }
         };
 
