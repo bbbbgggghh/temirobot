@@ -22,7 +22,7 @@
         android:id="@+id/edt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="number"
         android:ems="7"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

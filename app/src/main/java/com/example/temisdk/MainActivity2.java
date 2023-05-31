@@ -17,6 +17,9 @@ import com.robotemi.sdk.Robot;
 import com.robotemi.sdk.TtsRequest;
 import com.robotemi.sdk.listeners.OnBeWithMeStatusChangedListener;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import org.jetbrains.annotations.NotNull;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -32,11 +35,25 @@ public class MainActivity2 extends AppCompatActivity {
         et = (EditText) findViewById(R.id.edt);
         robot = Robot.getInstance();
 
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                robot.beWithMe();
+            }
+        };
+
+        timer.schedule(task, 40000);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                if(et.getText().toString() == "나비"){
-                    robot.goTo("A");
+                if(et.getText().toString().length() == 0){
+                    return;
+                }
+
+                if(Integer.parseInt(et.getText().toString()) == 123456){
+                    robot.goTo("B");
                     Intent intent = new Intent(MainActivity2.this, MainActivity1.class);
                     startActivity(intent);
                 }
