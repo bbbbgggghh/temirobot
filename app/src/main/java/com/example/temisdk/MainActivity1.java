@@ -25,20 +25,9 @@ public class MainActivity1 extends AppCompatActivity {
 
         Button btn =(Button)findViewById(R.id.btn);
         robot = Robot.getInstance();
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            }
-        });
-        //서버랑 연결 여부 확인. 연결 되면 순찰모드로 작동합니다. 그렇지 않으면 작동할 수 없다
-
-        //listener로 신호 받는 코드 구현해야함
-        // ...
-        //
-
-
-
                 //서버에서 센서 신호 받아서 이동, 위치 알림 보내기, 암구호 요청(입력페이지 필요함 intent),
                 //암구호 입력시 홈베이스 이동, 미입력시 촬영 및 따라가기, 관리자 도착시 홈베이스
 
@@ -55,4 +44,6 @@ public class MainActivity1 extends AppCompatActivity {
                 //robot.goTo("B");
 
             }
-        }
+        });
+    }
+}
