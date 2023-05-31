@@ -33,7 +33,7 @@ public class MainActivity1 extends AppCompatActivity {
                 //서버에 야간경비 시작했다고 보냄 -> 인체감지 센서 활성화
 
                 //서버에서 센서신호 받음
-                robot.goTo("A"); //센서위치로 이동
+                robot.goTo("B"); //센서위치로 이동
                 //서버로 테미 위치 보내기
 
                 Intent intent = new Intent(MainActivity1.this, MainActivity2.class);

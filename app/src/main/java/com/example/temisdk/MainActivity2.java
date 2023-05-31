@@ -36,7 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 if(et.getText().toString() == "나비"){
-                    robot.goTo("B");
+                    robot.goTo("A");
                     Intent intent = new Intent(MainActivity2.this, MainActivity1.class);
                     startActivity(intent);
                 }
