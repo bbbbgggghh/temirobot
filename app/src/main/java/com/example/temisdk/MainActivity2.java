@@ -57,6 +57,7 @@ public class MainActivity2 extends AppCompatActivity {
                     robot.goTo("B");
                     Intent intent = new Intent(MainActivity2.this, MainActivity1.class);
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     robot.beWithMe();
