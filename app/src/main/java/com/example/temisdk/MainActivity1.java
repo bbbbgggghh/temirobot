@@ -37,7 +37,7 @@ public class MainActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
 
-        Button btn =(Button)findViewById(R.id.btn);
+        btn = (Button)findViewById(R.id.btn);
         robot = Robot.getInstance();
 
         btn.setOnClickListener(new View.OnClickListener() {
