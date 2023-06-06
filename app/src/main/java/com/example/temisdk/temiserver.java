@@ -25,20 +25,20 @@ public class temiserver extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main1);
 
         client = new OkHttpClient();
 
-        Button button1 = findViewById(R.id.button1);
+        Button button1 = findViewById(R.id.btn);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
+                sendRequest("순찰 모드 ON");
             }
         });
     }
 
-    private void sendRequest() {
+    private void sendRequest(String message) {
         String url = "https://6k5q9dxxj2.execute-api.ap-northeast-2.amazonaws.com/test";
         String json = "{\"message\": \"순찰 모드 ON\"}";
 
