@@ -1,35 +1,23 @@
 package com.example.temisdk;
 
-import com.example.temisdk.temiserver;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.util.Log;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import okhttp3.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.robotemi.sdk.Robot;
-import com.robotemi.sdk.TtsRequest;
 
 public class MainActivity1 extends AppCompatActivity {
 
     private Button btn;
 
     private Robot robot;
+
+    NetworkTask networkTask;
 
 
     @Override
@@ -39,6 +27,8 @@ public class MainActivity1 extends AppCompatActivity {
 
         btn = (Button)findViewById(R.id.btn);
         robot = Robot.getInstance();
+
+        networkTask = new NetworkTask();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +40,8 @@ public class MainActivity1 extends AppCompatActivity {
 
                 //서버에서 센서신호 받음
                     robot.goTo("A"); //센서위치로 이동
-                    //서버로 테미 위치 보내기
+                    networkTask.location = "A";
+                    networkTask.execute();
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
             }
