@@ -62,6 +62,8 @@ public class MainActivity2 extends AppCompatActivity {
                 else{
                     robot.beWithMe();
                     //관리자 호출
+                    robot.speak(TtsRequest.create("관리자를 호출합니다",true));
+                    robot.startTelepresence(robot.getAdminInfo().getName(), robot.getAdminInfo().getUserId());
                 }
             }
         });
