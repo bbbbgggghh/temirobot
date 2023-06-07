@@ -33,7 +33,6 @@ public class MainActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
 
-        btn = (Button)findViewById(R.id.btn);
         robot = Robot.getInstance();
 
         networkTask = new NetworkTask();
