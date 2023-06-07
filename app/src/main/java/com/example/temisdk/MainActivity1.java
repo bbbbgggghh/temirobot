@@ -11,6 +11,7 @@ import okhttp3.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +33,7 @@ public class MainActivity1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
+        FirebaseApp.initializeApp(this);
 
         robot = Robot.getInstance();
 
@@ -40,29 +42,30 @@ public class MainActivity1 extends AppCompatActivity {
         databaseReference.child("sensor").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Object location = snapshot.getValue();
-                if(location == "A"){
+                Object loc = snapshot.getValue(Object.class);
+                String location = String.valueOf(loc);
+                if(location == "1"){
                     robot.goTo("A"); //센서위치로 이동
                     networkTask.location = "A";
                     networkTask.execute();
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                 }
-                if(location == "B"){
+                if(location == "2"){
                     robot.goTo("B"); //센서위치로 이동
                     networkTask.location = "B";
                     networkTask.execute();
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                 }
-                if(location == "C"){
+                if(location == "3"){
                     robot.goTo("C"); //센서위치로 이동
                     networkTask.location = "C";
                     networkTask.execute();
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                 }
-                if(location == "D"){
+                if(location == "4"){
                     robot.goTo("D"); //센서위치로 이동
                     networkTask.location = "D";
                     networkTask.execute();
