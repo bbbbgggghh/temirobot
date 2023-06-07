@@ -20,8 +20,6 @@ import com.robotemi.sdk.Robot;
 
 public class MainActivity1 extends AppCompatActivity {
 
-    private Button btn;
-
     private Robot robot;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
