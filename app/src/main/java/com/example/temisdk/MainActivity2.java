@@ -36,7 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
         robot = Robot.getInstance();
 
         Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
+        final TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 robot.beWithMe();
@@ -56,7 +56,8 @@ public class MainActivity2 extends AppCompatActivity {
                 }
 
                 if(Integer.parseInt(et.getText().toString()) == 123456){
-                    robot.goTo("B");
+                    task.cancel();
+                    robot.goTo("홈베이스");
                     Intent intent = new Intent(MainActivity2.this, MainActivity1.class);
                     startActivity(intent);
                     finish();
