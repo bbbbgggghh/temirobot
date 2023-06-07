@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "771856001740",
+    "firebase_url": "https://mobilerobot-team1-default-rtdb.firebaseio.com",
+    "project_id": "mobilerobot-team1",
+    "storage_bucket": "mobilerobot-team1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771856001740:android:67280e9ab1fa2284983069",
+        "android_client_info": {
+          "package_name": "com.example.temisdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "771856001740-48mo5ajfj10hgpj07d733tcg04ot898e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-CQx3Mz1gE018YCbebOH8JKEql5OK_nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "771856001740-48mo5ajfj10hgpj07d733tcg04ot898e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
