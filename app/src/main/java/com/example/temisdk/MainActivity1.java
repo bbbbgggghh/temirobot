@@ -24,7 +24,7 @@ public class MainActivity1 extends AppCompatActivity {
     private Robot robot;
 
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference = firebaseDatabase.getReference("sensor");
+    DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     NetworkTask networkTask;
 
@@ -42,7 +42,7 @@ public class MainActivity1 extends AppCompatActivity {
         databaseReference.child("sensor").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Object loc = snapshot.getValue(Object.class);
+                Object loc = snapshot.getValue();
                 String location = String.valueOf(loc);
                 if(location == "1"){
                     robot.goTo("A"); //센서위치로 이동
