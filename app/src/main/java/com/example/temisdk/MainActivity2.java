@@ -63,6 +63,7 @@ public class MainActivity2 extends AppCompatActivity {
                     finish();
                 }
                 else{
+                    task.cancel();
                     robot.beWithMe();
                     //관리자 호출
                     robot.speak(TtsRequest.create("관리자를 호출합니다",true));
