@@ -48,29 +48,40 @@ public class MainActivity1 extends AppCompatActivity {
                     robot.goTo("A"); //센서위치로 이동
                     networkTask.location = "A";
                     networkTask.execute();
+                    databaseReference.child("sensor").setValue(null);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
+                    finish();
                 }
-                if(location == "2"){
+                else if(location == "2"){
                     robot.goTo("B"); //센서위치로 이동
                     networkTask.location = "B";
                     networkTask.execute();
+                    databaseReference.child("sensor").setValue(null);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
+                    finish();
                 }
-                if(location == "3"){
+                else if(location == "3"){
                     robot.goTo("C"); //센서위치로 이동
                     networkTask.location = "C";
                     networkTask.execute();
+                    databaseReference.child("sensor").setValue(null);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
+                    finish();
                 }
-                if(location == "4"){
+                else if(location == "4"){
                     robot.goTo("D"); //센서위치로 이동
                     networkTask.location = "D";
                     networkTask.execute();
+                    databaseReference.child("sensor").setValue(null);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
+                    finish();
+                }
+                else {
+                    return;
                 }
             }
             @Override
