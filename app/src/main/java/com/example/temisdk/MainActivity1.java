@@ -45,37 +45,37 @@ public class MainActivity1 extends AppCompatActivity {
                 Object loc = snapshot.getValue();
                 String location = String.valueOf(loc);
                 if(location == "1"){
-                    robot.goTo("A"); //센서위치로 이동
-                    networkTask.location = "A";
+                    robot.goTo("E"); //센서위치로 이동
+                    networkTask.location = "E";
                     networkTask.execute();
-                    databaseReference.child("sensor").setValue(null);
+                    databaseReference.child("sensor").setValue(0);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                     finish();
                 }
                 else if(location == "2"){
-                    robot.goTo("B"); //센서위치로 이동
-                    networkTask.location = "B";
+                    robot.goTo("F"); //센서위치로 이동
+                    networkTask.location = "F";
                     networkTask.execute();
-                    databaseReference.child("sensor").setValue(null);
+                    databaseReference.child("sensor").setValue(0);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                     finish();
                 }
                 else if(location == "3"){
-                    robot.goTo("C"); //센서위치로 이동
-                    networkTask.location = "C";
+                    robot.goTo("G"); //센서위치로 이동
+                    networkTask.location = "G";
                     networkTask.execute();
-                    databaseReference.child("sensor").setValue(null);
+                    databaseReference.child("sensor").setValue(0);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                     finish();
                 }
                 else if(location == "4"){
-                    robot.goTo("D"); //센서위치로 이동
-                    networkTask.location = "D";
+                    robot.goTo("H"); //센서위치로 이동
+                    networkTask.location = "H";
                     networkTask.execute();
-                    databaseReference.child("sensor").setValue(null);
+                    databaseReference.child("sensor").setValue(0);
                     Intent intent = new Intent(MainActivity1.this, MainActivity2.class);
                     startActivity(intent);
                     finish();
